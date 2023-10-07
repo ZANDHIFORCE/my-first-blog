@@ -6,19 +6,19 @@
 
     <body>
         <div>
-            <h1><a href="">잔디의 블로그</a></h1>
+            <h1><a href="/">잔디의 블로그</a></h1>
         </div>
 
-        <div>
-            <p>publish: 2023-10-07, 19:53</p>
-            <h2><a href="">My first post</a></h2>
-            <p>위기주도 학습을 읽었다.</p>
+        <div> 
+            {% for post in posts %}
+                <div>
+                    <p>published: {{post.published_date}}</p>
+                    <h1><a=href="">{{post.title}}</a></h1>
+                    <p>{{post.text|linebreaksbr}}</p>
+                    <br>
+                </div>
+            {% endfor %}
         </div>
 
-        <div>
-            <p>pushlished: 2023-10-07, 20:02</p>
-            <h2><a href="">My second post</a></h2>
-            <p>미서 덕분에 감기몸살에도 불구하고 카페에 와서 공부중이다.</p>
-        </div>
     </body>
 </html>
